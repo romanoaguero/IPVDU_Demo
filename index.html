@@ -34,10 +34,10 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/Parcelario_2.js"></script>
-        <script src="data/InfraVerde_3.js"></script>
-        <script src="data/ViviendasCensadas_4.js"></script>
-        <script src="data/Lineas_Lomas_de_Tafi_5.js"></script>
+        <script src="data/Parcelario_1.js"></script>
+        <script src="data/InfraVerde_2.js"></script>
+        <script src="data/ViviendasCensadas_3.js"></script>
+        <script src="data/Lineas_Lomas_de_Tafi_4.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -56,7 +56,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-26.796678019417715,-65.25217548441141],[-26.763274274162683,-65.19173437340262]]);
+        }).fitBounds([[-26.795571049158358,-65.25529350548611],[-26.762166978145043,-65.19485239447734]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -97,22 +97,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_GoogleSatellite_0');
-        map.getPane('pane_GoogleSatellite_0').style.zIndex = 400;
-        var layer_GoogleSatellite_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleSatellite_0',
-            opacity: 1.0,
-            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
-        });
-        layer_GoogleSatellite_0;
-        map.createPane('pane_OSMStandard_1');
-        map.getPane('pane_OSMStandard_1').style.zIndex = 401;
-        var layer_OSMStandard_1 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            pane: 'pane_OSMStandard_1',
+        map.createPane('pane_OSMStandard_0');
+        map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_0',
             opacity: 1.0,
             attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
             minZoom: 1,
@@ -120,9 +108,9 @@
             minNativeZoom: 0,
             maxNativeZoom: 19
         });
-        layer_OSMStandard_1;
-        map.addLayer(layer_OSMStandard_1);
-        function pop_Parcelario_2(feature, layer) {
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        function pop_Parcelario_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -160,9 +148,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Parcelario_2_0() {
+        function style_Parcelario_1_0() {
             return {
-                pane: 'pane_Parcelario_2',
+                pane: 'pane_Parcelario_1',
                 opacity: 1,
                 color: 'rgba(247,247,247,0.584)',
                 dashArray: '',
@@ -175,21 +163,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Parcelario_2');
-        map.getPane('pane_Parcelario_2').style.zIndex = 402;
-        map.getPane('pane_Parcelario_2').style['mix-blend-mode'] = 'normal';
-        var layer_Parcelario_2 = new L.geoJson(json_Parcelario_2, {
+        map.createPane('pane_Parcelario_1');
+        map.getPane('pane_Parcelario_1').style.zIndex = 401;
+        map.getPane('pane_Parcelario_1').style['mix-blend-mode'] = 'normal';
+        var layer_Parcelario_1 = new L.geoJson(json_Parcelario_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Parcelario_2',
-            layerName: 'layer_Parcelario_2',
-            pane: 'pane_Parcelario_2',
-            onEachFeature: pop_Parcelario_2,
-            style: style_Parcelario_2_0,
+            dataVar: 'json_Parcelario_1',
+            layerName: 'layer_Parcelario_1',
+            pane: 'pane_Parcelario_1',
+            onEachFeature: pop_Parcelario_1,
+            style: style_Parcelario_1_0,
         });
-        bounds_group.addLayer(layer_Parcelario_2);
-        map.addLayer(layer_Parcelario_2);
-        function pop_InfraVerde_3(feature, layer) {
+        bounds_group.addLayer(layer_Parcelario_1);
+        map.addLayer(layer_Parcelario_1);
+        function pop_InfraVerde_2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -283,9 +271,9 @@
             popup.setContent(updatedContent);
         }
 
-        function style_InfraVerde_3_0() {
+        function style_InfraVerde_2_0() {
             return {
-                pane: 'pane_InfraVerde_3',
+                pane: 'pane_InfraVerde_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -298,21 +286,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_InfraVerde_3');
-        map.getPane('pane_InfraVerde_3').style.zIndex = 403;
-        map.getPane('pane_InfraVerde_3').style['mix-blend-mode'] = 'normal';
-        var layer_InfraVerde_3 = new L.geoJson(json_InfraVerde_3, {
+        map.createPane('pane_InfraVerde_2');
+        map.getPane('pane_InfraVerde_2').style.zIndex = 402;
+        map.getPane('pane_InfraVerde_2').style['mix-blend-mode'] = 'normal';
+        var layer_InfraVerde_2 = new L.geoJson(json_InfraVerde_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_InfraVerde_3',
-            layerName: 'layer_InfraVerde_3',
-            pane: 'pane_InfraVerde_3',
-            onEachFeature: pop_InfraVerde_3,
-            style: style_InfraVerde_3_0,
+            dataVar: 'json_InfraVerde_2',
+            layerName: 'layer_InfraVerde_2',
+            pane: 'pane_InfraVerde_2',
+            onEachFeature: pop_InfraVerde_2,
+            style: style_InfraVerde_2_0,
         });
-        bounds_group.addLayer(layer_InfraVerde_3);
-        map.addLayer(layer_InfraVerde_3);
-        function pop_ViviendasCensadas_4(feature, layer) {
+        bounds_group.addLayer(layer_InfraVerde_2);
+        map.addLayer(layer_InfraVerde_2);
+        function pop_ViviendasCensadas_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -366,11 +354,11 @@
             popup.setContent(updatedContent);
         }
 
-        function style_ViviendasCensadas_4_0(feature) {
+        function style_ViviendasCensadas_3_0(feature) {
             switch(String(feature.properties['35'])) {
                 case 'Deporte':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -380,7 +368,7 @@
                     break;
                 case 'Deporte-Esparcimiento':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -390,7 +378,7 @@
                     break;
                 case 'Deporte-Esparcimiento-Juego de infancias':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -400,7 +388,7 @@
                     break;
                 case 'Deporte-Juego de infancias':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -410,7 +398,7 @@
                     break;
                 case 'Esparcimiento':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -420,7 +408,7 @@
                     break;
                 case 'Esparcimiento-Juego de infancias':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -430,7 +418,7 @@
                     break;
                 case 'Juego de infancias':
                     return {
-                pane: 'pane_ViviendasCensadas_4',
+                pane: 'pane_ViviendasCensadas_3',
                 stroke: false, 
                 fill: true,
                 fillOpacity: 1,
@@ -440,21 +428,21 @@
                     break;
             }
         }
-        map.createPane('pane_ViviendasCensadas_4');
-        map.getPane('pane_ViviendasCensadas_4').style.zIndex = 404;
-        map.getPane('pane_ViviendasCensadas_4').style['mix-blend-mode'] = 'normal';
-        var layer_ViviendasCensadas_4 = new L.geoJson(json_ViviendasCensadas_4, {
+        map.createPane('pane_ViviendasCensadas_3');
+        map.getPane('pane_ViviendasCensadas_3').style.zIndex = 403;
+        map.getPane('pane_ViviendasCensadas_3').style['mix-blend-mode'] = 'normal';
+        var layer_ViviendasCensadas_3 = new L.geoJson(json_ViviendasCensadas_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ViviendasCensadas_4',
-            layerName: 'layer_ViviendasCensadas_4',
-            pane: 'pane_ViviendasCensadas_4',
-            onEachFeature: pop_ViviendasCensadas_4,
-            style: style_ViviendasCensadas_4_0,
+            dataVar: 'json_ViviendasCensadas_3',
+            layerName: 'layer_ViviendasCensadas_3',
+            pane: 'pane_ViviendasCensadas_3',
+            onEachFeature: pop_ViviendasCensadas_3,
+            style: style_ViviendasCensadas_3_0,
         });
-        bounds_group.addLayer(layer_ViviendasCensadas_4);
-        map.addLayer(layer_ViviendasCensadas_4);
-        function pop_Lineas_Lomas_de_Tafi_5(feature, layer) {
+        bounds_group.addLayer(layer_ViviendasCensadas_3);
+        map.addLayer(layer_ViviendasCensadas_3);
+        function pop_Lineas_Lomas_de_Tafi_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -488,11 +476,11 @@
             popup.setContent(updatedContent);
         }
 
-        function style_Lineas_Lomas_de_Tafi_5_0(feature) {
+        function style_Lineas_Lomas_de_Tafi_4_0(feature) {
             switch(String(feature.properties['Leyenda'])) {
                 case 'Ecobus - Linea A':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(205,229,47,1.0)',
                 dashArray: '',
@@ -505,7 +493,7 @@
                     break;
                 case 'Linea 101 - Lomas de Tafi I':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(133,152,227,1.0)',
                 dashArray: '',
@@ -518,7 +506,7 @@
                     break;
                 case 'Linea 101 - Lomas de Tafi II':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(223,138,69,1.0)',
                 dashArray: '',
@@ -531,7 +519,7 @@
                     break;
                 case 'Linea 109 - Lomas de Tafi':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(214,28,68,1.0)',
                 dashArray: '',
@@ -544,7 +532,7 @@
                     break;
                 case 'Linea 131 - Diagonal':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(109,234,78,1.0)',
                 dashArray: '',
@@ -557,7 +545,7 @@
                     break;
                 case 'Linea 131 - Karamareff':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(39,198,222,1.0)',
                 dashArray: '',
@@ -570,7 +558,7 @@
                     break;
                 case 'Linea 131 - Lomas de Tafi':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(112,21,216,1.0)',
                 dashArray: '',
@@ -583,7 +571,7 @@
                     break;
                 case 'Linea 142 - Lomas de Tafi':
                     return {
-                pane: 'pane_Lineas_Lomas_de_Tafi_5',
+                pane: 'pane_Lineas_Lomas_de_Tafi_4',
                 opacity: 1,
                 color: 'rgba(227,92,209,1.0)',
                 dashArray: '',
@@ -596,20 +584,20 @@
                     break;
             }
         }
-        map.createPane('pane_Lineas_Lomas_de_Tafi_5');
-        map.getPane('pane_Lineas_Lomas_de_Tafi_5').style.zIndex = 405;
-        map.getPane('pane_Lineas_Lomas_de_Tafi_5').style['mix-blend-mode'] = 'normal';
-        var layer_Lineas_Lomas_de_Tafi_5 = new L.geoJson(json_Lineas_Lomas_de_Tafi_5, {
+        map.createPane('pane_Lineas_Lomas_de_Tafi_4');
+        map.getPane('pane_Lineas_Lomas_de_Tafi_4').style.zIndex = 404;
+        map.getPane('pane_Lineas_Lomas_de_Tafi_4').style['mix-blend-mode'] = 'normal';
+        var layer_Lineas_Lomas_de_Tafi_4 = new L.geoJson(json_Lineas_Lomas_de_Tafi_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Lineas_Lomas_de_Tafi_5',
-            layerName: 'layer_Lineas_Lomas_de_Tafi_5',
-            pane: 'pane_Lineas_Lomas_de_Tafi_5',
-            onEachFeature: pop_Lineas_Lomas_de_Tafi_5,
-            style: style_Lineas_Lomas_de_Tafi_5_0,
+            dataVar: 'json_Lineas_Lomas_de_Tafi_4',
+            layerName: 'layer_Lineas_Lomas_de_Tafi_4',
+            pane: 'pane_Lineas_Lomas_de_Tafi_4',
+            onEachFeature: pop_Lineas_Lomas_de_Tafi_4,
+            style: style_Lineas_Lomas_de_Tafi_4_0,
         });
-        bounds_group.addLayer(layer_Lineas_Lomas_de_Tafi_5);
-        map.addLayer(layer_Lineas_Lomas_de_Tafi_5);
+        bounds_group.addLayer(layer_Lineas_Lomas_de_Tafi_4);
+        map.addLayer(layer_Lineas_Lomas_de_Tafi_4);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -621,17 +609,17 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Lineas_Lomas_de_Tafi<br /><table><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_EcobusLineaA0.png" /></td><td>Ecobus - Linea A</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea101LomasdeTafiI1.png" /></td><td>Linea 101 - Lomas de Tafi I</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea101LomasdeTafiII2.png" /></td><td>Linea 101 - Lomas de Tafi II</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea109LomasdeTafi3.png" /></td><td>Linea 109 - Lomas de Tafi</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea131Diagonal4.png" /></td><td>Linea 131 - Diagonal</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea131Karamareff5.png" /></td><td>Linea 131 - Karamareff</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea131LomasdeTafi6.png" /></td><td>Linea 131 - Lomas de Tafi</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_5_Linea142LomasdeTafi7.png" /></td><td>Linea 142 - Lomas de Tafi</td></tr></table>': layer_Lineas_Lomas_de_Tafi_5,'Viviendas Censadas<br /><table><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_Deporte0.png" /></td><td>Deporte</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_DeporteEsparcimiento1.png" /></td><td>Deporte-Esparcimiento</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_DeporteEsparcimientoJuegodeinfancias2.png" /></td><td>Deporte-Esparcimiento-Juego de infancias</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_DeporteJuegodeinfancias3.png" /></td><td>Deporte-Juego de infancias</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_Esparcimiento4.png" /></td><td>Esparcimiento</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_EsparcimientoJuegodeinfancias5.png" /></td><td>Esparcimiento-Juego de infancias</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_4_Juegodeinfancias6.png" /></td><td>Juego de infancias</td></tr></table>': layer_ViviendasCensadas_4,'<img src="legend/InfraVerde_3.png" /> Infra Verde ': layer_InfraVerde_3,'<img src="legend/Parcelario_2.png" /> Parcelario': layer_Parcelario_2,"OSM Standard": layer_OSMStandard_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        L.control.layers(baseMaps,{'Lineas_Lomas_de_Tafi<br /><table><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_EcobusLineaA0.png" /></td><td>Ecobus - Linea A</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea101LomasdeTafiI1.png" /></td><td>Linea 101 - Lomas de Tafi I</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea101LomasdeTafiII2.png" /></td><td>Linea 101 - Lomas de Tafi II</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea109LomasdeTafi3.png" /></td><td>Linea 109 - Lomas de Tafi</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea131Diagonal4.png" /></td><td>Linea 131 - Diagonal</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea131Karamareff5.png" /></td><td>Linea 131 - Karamareff</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea131LomasdeTafi6.png" /></td><td>Linea 131 - Lomas de Tafi</td></tr><tr><td style="text-align: center;"><img src="legend/Lineas_Lomas_de_Tafi_4_Linea142LomasdeTafi7.png" /></td><td>Linea 142 - Lomas de Tafi</td></tr></table>': layer_Lineas_Lomas_de_Tafi_4,'Viviendas Censadas<br /><table><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_Deporte0.png" /></td><td>Deporte</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_DeporteEsparcimiento1.png" /></td><td>Deporte-Esparcimiento</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_DeporteEsparcimientoJuegodeinfancias2.png" /></td><td>Deporte-Esparcimiento-Juego de infancias</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_DeporteJuegodeinfancias3.png" /></td><td>Deporte-Juego de infancias</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_Esparcimiento4.png" /></td><td>Esparcimiento</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_EsparcimientoJuegodeinfancias5.png" /></td><td>Esparcimiento-Juego de infancias</td></tr><tr><td style="text-align: center;"><img src="legend/ViviendasCensadas_3_Juegodeinfancias6.png" /></td><td>Juego de infancias</td></tr></table>': layer_ViviendasCensadas_3,'<img src="legend/InfraVerde_2.png" /> Infra Verde ': layer_InfraVerde_2,'<img src="legend/Parcelario_1.png" /> Parcelario': layer_Parcelario_1,"OSM Standard": layer_OSMStandard_0,},{collapsed:false}).addTo(map);
         setBounds();
-        resetLabels([layer_InfraVerde_3]);
+        resetLabels([layer_InfraVerde_2]);
         map.on("zoomend", function(){
-            resetLabels([layer_InfraVerde_3]);
+            resetLabels([layer_InfraVerde_2]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_InfraVerde_3]);
+            resetLabels([layer_InfraVerde_2]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_InfraVerde_3]);
+            resetLabels([layer_InfraVerde_2]);
         });
         </script>
     </body>
